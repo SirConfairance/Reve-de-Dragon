@@ -158,7 +158,7 @@ def caracteristique(num1,num2):
         (7, 0): "Ouie",
         (7, 1): " Ouie",
         (8, 0): "Odorat_Gout",
-        (8, 1): " Odorat-Gout",
+        (8, 1): " Odorat-Goût",
         (9, 0): "Volonte",
         (9, 1): " Volonté",
         (10, 0): "Intellect",
