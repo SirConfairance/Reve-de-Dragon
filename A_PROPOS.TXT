@@ -1,0 +1,16 @@
+Rêve de Dragon
+Inspiré du jeu créé par Denis Gerfaud en 1985
+Utilise les règles RdD2 révisées de 1993
+
+Copyright (C) 2017
+     Jikael Larriven
+     Marguerite Sobkowicz
+     Cédric Mongiat
+	 
+Rêve de Dragon est une marque déposée par Denis Gerfaud
+
+Ce programme est un logiciel libre ; vous pouvez le redistribuer ou le modifier suivant les termes de la GNU General Public License telle que publiée par la Free Software Foundation , soit la version 3 de la Licence, soit (à votre gré) toute version ultérieure.
+
+Ce programme est distribué dans l’espoir qu’il sera utile, mais SANS AUCUNE GARANTIE : sans même la garantie implicite de COMMERCIALISABILITÉ ni d’ADÉQUATION À UN OBJECTIF PARTICULIER. Consultez la GNU General Public License pour plus de détails.
+
+Vous devriez avoir reçu une copie de la GNU General Public License avec ce programme ; si ce n’est pas le cas, consultez : <http://www.gnu.org/licenses/>.
