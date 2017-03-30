@@ -181,7 +181,10 @@ class Jeu:
         )
         if len(filename) > 0:
             # On conserve le nom du fichier utilisé
-            self.filename = filename
+            name, extension = os.path.splitext(filename)
+            if extension == '':
+                extension = 'txt'
+            self.filename = name + '.' + extension
             self.enregistrer()
         return
 

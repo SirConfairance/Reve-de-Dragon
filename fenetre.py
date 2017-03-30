@@ -170,7 +170,7 @@ class Fenetre:
         frame20.grid(row=0, column=0, sticky='NW', padx="5", pady="5")
         frame21 = LabelFrame(frame2, text=' Mentales ', borderwidth=2, relief='ridge', height=200, width=200)
         frame21.grid(row=0, column=1, sticky='NW', padx="5", pady="5")
-        frame22 = LabelFrame(frame2, text='  ', borderwidth=2, relief='ridge', height=200, width=200)
+        frame22 = LabelFrame(frame2, text=' Pouvoirs ', borderwidth=2, relief='ridge', height=200, width=200)
         frame22.grid(row=0, column=2, sticky='NW', padx="5", pady="5")
         frame23 = LabelFrame(frame2, text=' Dérivées ', borderwidth=2, relief='ridge', height=200, width=200)
         frame23.grid(row=0, column=3, sticky='NW', padx="5", pady="5")
