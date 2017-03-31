@@ -55,10 +55,9 @@
 
 import os
 import json
+import random
 from tkinter import filedialog, messagebox
 import personnage
-import resolution
-
 
 class Jeu:
     def __init__(self):
@@ -251,7 +250,7 @@ class Jeu:
     def lancer(self, caracteristique, competence):
 
         # Seuil obtenu à partir du tableau de résolution
-        seuil = resolution.calcul(caracteristique, competence)
+        seuil = self.calcul(caracteristique, competence)
 
         # Calcul des seuils de jugement
         # - c'est une "réussite particulière" si le tirage est inférieur à 20% du seuil
@@ -271,7 +270,7 @@ class Jeu:
             echec_particulier = seuil + 0.8 * (100 - seuil)
 
         # lancer des dés
-        des = resolution.lancer()
+        des = self.des()
 
         # jugement
         if des <= reussi_particulier:
@@ -294,3 +293,24 @@ class Jeu:
         # on retourne un dictionnaire : seuil, tirage et special
         tirage = {"seuil": seuil, "tirage": des, "special": special}
         return tirage
+
+    # Fonction de calcul du Seuil de points de 0 à 170
+    # Ce seuil sera utilisé pour déterminer le succès ou non de l'action en cours pour le personnage
+    def calcul(self,caracteristique,competence):
+
+        # On utilise la formule plutôt que le tableau du livre
+        return int(caracteristique * (1 + .5 * (competence + 8)))
+
+    # Lancer de dés
+    # On lance 2 dés à 10 faces donnant un résultat entre 1 et 100
+    def des(self):
+
+        # On lance bien 2 dés
+        unit = random.randrange(0, 9)
+        dix = random.randrange(0, 9)
+        score = 10 * dix + unit
+
+        # Le résultat 0-0 est interprèté comme 100
+        if score == 0:
+            score = 100
+        return score
