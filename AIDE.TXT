@@ -32,7 +32,7 @@
     Au départ le personnage reçoit 3000 points d'expérience préliminaire.
     Les valeurs minimales sont imposées par la classe de compétence. Il n'y a pas de valeur maximale.
     De même que 10 est une caractéristique statistiquement moyenne, 0 est un niveau statistiquement moyen.
-    Vous avez accès aux compétences "Draconic" si votre personnage est Haut-Rêvant. Vous devez y placer 350 points.
+    Vous avez accès aux compétences "Draconic" si votre personnage est Haut-Rêvant. Vous devez y placer 300 points.
 
 	
 3. Validation du Personnage.
