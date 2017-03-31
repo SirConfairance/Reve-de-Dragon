@@ -84,7 +84,8 @@ class Fenetre:
         # helpmenu: menu d'aide
         self.helpmenu = Menu(self.menubar, tearoff=0)
         self.menubar.add_cascade(label="Aide", menu=self.helpmenu)
-        self.helpmenu.add_command(label="Utilisation du Programme", command=self.aide)
+        self.helpmenu.add_command(label="Règles du Jeu", command=self.regles)
+        self.helpmenu.add_command(label="Utilisation du Programme", command=self.utilise)
         self.helpmenu.add_command(label="A Propos...", command=self.a_propos)
 
         # frame1 : Fiche du personnage
@@ -235,7 +236,7 @@ class Fenetre:
 
         # frame 4 : Compétences
         frame4 = LabelFrame(root, text=" Compétences ", borderwidth=2, relief='ridge', height=200, width=600)
-        frame4.grid(row=3, column=0, rowspan=2, sticky='NW', padx="10", pady="5")
+        frame4.grid(row=3, column=0, columnspan=2, sticky='NW', padx="10", pady="5")
         frame40 = LabelFrame(frame4, text=' Générales ', borderwidth=2, relief='ridge', height=200, width=200)
         frame40.grid(row=0, column=0, rowspan=2, sticky='NW', padx="5", pady="5")
         frame41 = LabelFrame(frame4, text=' Particulières ', borderwidth=2, relief='ridge', height=200, width=200)
@@ -246,6 +247,10 @@ class Fenetre:
         frame43.grid(row=0, column=3, sticky='NW', padx="5", pady="5")
         frame44 = LabelFrame(frame4, text=' Draconic ', borderwidth=2, relief='ridge', height=200, width=200)
         frame44.grid(row=1, column=3, sticky='SW', padx="5", pady="5")
+        frame45 = LabelFrame(frame4, text=' Combat Mélée ', borderwidth=2, relief='ridge', height=200, width=200)
+        frame45.grid(row=0, column=4, rowspan=2, sticky='NW', padx="5", pady="5")
+        frame46 = LabelFrame(frame4, text=' Combat Tir-Lancer ', borderwidth=2, relief='ridge', height=200, width=200)
+        frame46.grid(row=0, column=5, rowspan=2, sticky='NW', padx="5", pady="5")
         self.Entry_A = []
 
         # Colonne 0 : Générales
@@ -254,7 +259,7 @@ class Fenetre:
             Label(frame40, text="           "+personnage.competence(i, 2)+':').grid(row=i, column=0, sticky='E')
             Entry(frame40, textvariable=self.Entry_A[i], justify='right', width=3)\
                 .grid(row=i, column=1, sticky='W', padx="5")
-        for i in range(11,15):
+        for i in range(11, 15):
             Label(frame40, text=' ').grid(row=i, column=0, sticky='E')
 
         # Colonne 1 : Particulières
@@ -272,7 +277,7 @@ class Fenetre:
                 .grid(row=i-25, column=0, sticky='E')
             Entry(frame42, textvariable=self.Entry_A[i], justify='right', width=3)\
                 .grid(row=i-25, column=1, sticky='W', padx="5")
-        for i in range(10,15):
+        for i in range(10, 15):
             Label(frame42, text=' ').grid(row=i, column=0, sticky='E')
 
         # Colonne 3: Connaissances
@@ -294,13 +299,33 @@ class Fenetre:
             self.Draconic[i].grid(row=i, column=1, sticky='W', padx="5")
         Label(frame44, text=' ').grid(row=4, column=0, sticky='E')
 
+        # Colonne 4 : Combat Mélée
+        for i in range(46, 59):
+            self.Entry_A.append(IntVar())
+            Label(frame45, text=personnage.competence(i, 2) + ':') \
+                .grid(row=i - 46, column=0, sticky='E')
+            Entry(frame45, textvariable=self.Entry_A[i], justify='right', width=3) \
+                .grid(row=i - 46, column=1, sticky='W', padx="5")
+        for i in range(13, 15):
+            Label(frame45, text=' ').grid(row=i, column=0, sticky='E')
+
+        # Colonne 5 : Combat Tir
+        for i in range(59, 65):
+            self.Entry_A.append(IntVar())
+            Label(frame46, text="         " + personnage.competence(i, 2) + ':') \
+                .grid(row=i - 59, column=0, sticky='E')
+            Entry(frame46, textvariable=self.Entry_A[i], justify='right', width=3) \
+                .grid(row=i - 59, column=1, sticky='W', padx="5")
+        for i in range(6, 15):
+            Label(frame46, text=' ').grid(row=i, column=0, sticky='E')
+
         # frame5 : table de résolution et lancer de dé
         frame5 = LabelFrame(root, text=" Résolution et Lancer de Dés ", borderwidth=2, relief='ridge', height=200, width=600)
-        frame5.grid(row=0, column=1, rowspan=4, sticky='NW', padx="10", pady="5")
+        frame5.grid(row=0, column=1, rowspan=3, columnspan=2, sticky='NW', padx="10", pady="5")
 
         # Listbox caractéristiques
         Label(frame5, text='Caractéristique:').grid(row=0, column=0, sticky='NE')
-        self.liste1 = Listbox(frame5, height=16, width=16, relief='sunken')
+        self.liste1 = Listbox(frame5, height=13, width=16, relief='sunken')
         self.liste1.grid(row=0, column=1, sticky='NW', padx="10", pady="5")
         for i in range(0, 18):
             self.liste1.insert(i, personnage.caracteristique(i, 1))
@@ -308,7 +333,7 @@ class Fenetre:
 
         # Listbox compétences
         Label(frame5, text='Compétence:').grid(row=0, column=2, sticky='NE')
-        self.liste2 = Listbox(frame5, height=16, width=16, relief='sunken')
+        self.liste2 = Listbox(frame5, height=13, width=16, relief='sunken')
         self.liste2.grid(row=0, column=3, sticky='NW', padx="10", pady="5")
         for i in range(0, 46):
             self.liste2.insert(i, personnage.competence(i, 2))
@@ -328,7 +353,7 @@ class Fenetre:
         self.Entry_R_A_Name = StringVar()
         Entry(frame5, textvariable=self.Entry_R_A_Name, justify='left', width=16, state='disabled') \
             .grid(row=17, column=3, sticky='W', padx="10")
-        Label(frame5, text='Seuil de Réussite:').grid(row=18, column=0, sticky='NE')
+        Label(frame5, text='   Seuil de Réussite:').grid(row=18, column=0, sticky='NE')
         self.Entry_R_Seuil = IntVar()
         Entry(frame5, textvariable=self.Entry_R_Seuil, justify='right', width=3, state='disabled')\
             .grid(row=18, column=1, sticky='W', padx="10")
@@ -347,9 +372,10 @@ class Fenetre:
             .grid(row=19, column=3, columnspan=3, sticky='W', padx="10")
 
         # La mascote
-        self.dragon = PhotoImage(file='./dragon.gif')
-        logo = Canvas(root, width=300, height=280, bd=1, relief='ridge')
-        logo.grid(row=4, column=1, sticky='S', padx="10", pady="10")
+        # On la fait déborder sur le frame4 pour gagner en largeur totale
+        self.dragon = PhotoImage(file='./dragon3.gif')
+        logo = Canvas(root, width=200, height=181, bd=1, relief='ridge')
+        logo.grid(row=3, column=1, columnspan=2, sticky='SE', padx="10", pady="4")
         logo.create_image(0, 0, image=self.dragon, anchor='nw')
 
         # L'ecran étant initialisé, on peut créér un premier personnage par défaut
@@ -468,7 +494,7 @@ class Fenetre:
             self.Entry_C[i].set(self.pod["Caracteristique"][personnage.caracteristique(i, 0)])
         for i in range(0, 7):
             self.Entry_P[i].set(self.pod["Point"][personnage.point(i, 0)])
-        for i in range(0, 46):
+        for i in range(0, 65):
             self.Entry_A[i].set(self.pod["Competence"][personnage.competence(i, 0)][personnage.competence(i, 1)])
         if self.Entry_HRevant.get() != 1:
             for i in range(0, 4):
@@ -510,7 +536,7 @@ class Fenetre:
             self.pod["Caracteristique"][personnage.caracteristique(i, 0)] = self.Entry_C[i].get()
         for i in range(0, 7):
             self.pod["Point"][personnage.point(i, 0)] = self.Entry_P[i].get()
-        for i in range(0, 46):
+        for i in range(0, 65):
             self.pod["Competence"][personnage.competence(i, 0)][personnage.competence(i, 1)] = self.Entry_A[i].get()
         retour = self.jeu.valider(self.pod)
         index = retour["index"]
@@ -573,18 +599,34 @@ class Fenetre:
         showinfo("A Propos de...", texte_a_propos)
         return
 
+    # Dialogue d'aide pour connaitre les règles du jeu
+    # Le texte est dans le fichier REGLES.TXT
+    def regles(self):
+
+        file = "REGLE.TXT"
+        titre = "Règles du Jeu Rêve de Dragon."
+        self.aide(file,titre)
+        return
+
+    # Le texte est dans le fichier AIDE.TXT
+    def utilise(self):
+
+        file = "AIDE.TXT"
+        titre = "Utilisation de Rêve de Dragon."
+        self.aide(file,titre)
+        return
+
     # Aide du jeu
     # Affiche une boite de dialogue avec un widget texte contenant l'aide
-    # Le texte est dans le fichier AIDE.TXT
-    def aide(self):
+    def aide(self, file, titre):
 
         # On ouvre une fenêtre fille de celle du jeu
         self.wdw = Toplevel()
         self.wdw.geometry('+400+100')
-        self.wdw.title("Utilisation de Rêve de Dragon.")
+        self.wdw.title(titre)
 
-        # Le texte de l'aid est tstocké dans le fichier AIDE.TXT
-        fp = open("AIDE.TXT", "r")
+        # Le texte de l'aide est stocké dans un fichier Atexte
+        fp = open(file, "r")
         texte_aide = fp.read()
         fp.close()
 
