@@ -133,12 +133,35 @@ def creer():
                 "Hypnos": -11,
                 "Narcos": -11,
                 "Thanatos": -11
-            }
+            },
+            "CMelee": {
+                "Bouclier": -6,
+                "CorpsaCorps": -6,
+                "Esquive": -6,
+                "Dague": -6,
+                "Epee1Main": -6,
+                "Epee2Main": -6,
+                "Fleau": -6,
+                "Hache1Main": -6,
+                "Hache2Main": -6,
+                "Lance": -6,
+                "Masse1Main": -6,
+                "Masse2Main": -6,
+                "ArmeHast": -6
+            },
+            "Tir": {
+                "Arbalete": -6,
+                "Arc": -6,
+                "Fronde": -6,
+                "DagueJet": -6,
+                "Javelot": -6,
+                "Fouet": -6,
+            },
         }
     }
     return person
 
-# Détermine la cléet le texte d'affichage associés à un index de caractéristiques
+# Détermine la clé et le texte d'affichage associés à un index de caractéristiques
 def caracteristique(num1,num2):
     case = {
         (0, 0): "Taille",
@@ -320,7 +343,64 @@ def competence(num1,num2):
         (44, 2): " Narcos",
         (45, 0): "Draconic",
         (45, 1): "Thanatos",
-        (45, 2): " Thanatos"
+        (45, 2): " Thanatos",
+        (46, 0): "CMelee",
+        (46, 1): "Bouclier",
+        (46, 2): " Bouclier",
+        (47, 0): "CMelee",
+        (47, 1): "CorpsaCorps",
+        (47, 2): " Corps à Corps",
+        (48, 0): "CMelee",
+        (48, 1): "Esquive",
+        (48, 2): " Esquive",
+        (49, 0): "CMelee",
+        (49, 1): "Dague",
+        (49, 2): " Dague",
+        (50, 0): "CMelee",
+        (50, 1): "Epee1Main",
+        (50, 2): " Epee une main",
+        (51, 0): "CMelee",
+        (51, 1): "Epee2Main",
+        (51, 2): " Epee deux mains",
+        (52, 0): "CMelee",
+        (52, 1): "Fleau",
+        (52, 2): " Fleau",
+        (53, 0): "CMelee",
+        (53, 1): "Hache1Main",
+        (53, 2): " Hache une main",
+        (54, 0): "CMelee",
+        (54, 1): "Hache2Main",
+        (54, 2): " Hache deux mains",
+        (55, 0): "CMelee",
+        (55, 1): "Lance",
+        (55, 2): " Lance",
+        (56, 0): "CMelee",
+        (56, 1): "Masse1Main",
+        (56, 2): " Masse une main",
+        (57, 0): "CMelee",
+        (57, 1): "Masse2Main",
+        (57, 2): " Masse deux mains",
+        (58, 0): "CMelee",
+        (58, 1): "ArmeHast",
+        (58, 2): " Arme Hast",
+        (59, 0): "Tir",
+        (59, 1): "Arbalete",
+        (59, 2): " Arbalète",
+        (60, 0): "Tir",
+        (60, 1): "Arc",
+        (60, 2): " Arc",
+        (61, 0): "Tir",
+        (61, 1): "Fronde",
+        (61, 2): " Fronde",
+        (62, 0): "Tir",
+        (62, 1): "DagueJet",
+        (62, 2): " Dague de Jet",
+        (63, 0): "Tir",
+        (63, 1): "Javelot",
+        (63, 2): " Javelot",
+        (64, 0): "Tir",
+        (64, 1): "Fouet",
+        (64, 2): " Fouet"
     }
     return case.get((num1, num2))
 
@@ -353,6 +433,13 @@ def verifier (person):
     if len(person["Fiche"]["Nom"]) < 3:
         return "Le Nom du personnage\ndoit être au moins de 3 caractères"
 
+    # Est-ce la création du personnage
+    # Si oui, version est zéro
+    if person["Version"] == 0:
+        creation = True
+    else:
+        creation = False
+
     # Taille  de 6 à 15
     # Beauté 1 à 16, les points au dessus de 10 sont retranchés des caractéristiques
     # Poids de 31 à 110, à vérifier selon la taille
@@ -376,18 +463,28 @@ def verifier (person):
         if cpt > 160:
             return "Vous avez affecté " + str(cpt) + " points aux caractéristiques\n Vous ne disposez que de 160 points"
 
+    # Si le personnage est Haut-Rêvant on doit réserver 300 points aux compétences Draconic
+    if person["Fiche"]["Haut_Revant"] > 0:
+        xd = 300
+        draconic = True
+    else:
+        xd = 0
+        draconic = False
+
     # Vérification du nombre de points de compétences à distribuer
     # (selon le livre de règles page 22)
-    x = 3000
-    # si draconic -350
+    x = 3000 - xd
 
     # Competences générales
     for i in range(0, 11):
 
         # Les compétences générales ne peuvent pas être inférieures à -4
+        # A la création aucune ne peut être supérieure à +3
         cg = person["Competence"]["Generale"][competence(i, 1)]
         if cg < -4:
             return "La valeur minimale pour la compétence\n" + competence(i, 2) + " est de -4"
+        if creation and cg > 3:
+            return "La valeur maximale pour la compétence\n" + competence(i, 2) + " est de 3 à la création"
 
         # Decalage de 4 pour avoir des indices partant de 0
         v = 4 + cg
@@ -407,9 +504,12 @@ def verifier (person):
     for i in range(11, 25):
 
         # Les compétences particulières ne peuvent pas être inférieures à -8
+        # A la création aucune ne peut être supérieure à +3
         cp = person["Competence"]["Particuliere"][competence(i, 1)]
         if cp < -8:
             return "La valeur minimale pour la compétence\n" + competence(i, 2) + " est de -8"
+        if creation and cp > 3:
+            return "La valeur maximale pour la compétence\n" + competence(i, 2) + " est de 3 à la création"
 
         # Decalage de 8 pour avoir des indices partant de 0
         v = 8 + cp
@@ -432,9 +532,12 @@ def verifier (person):
     for i in range(25, 35):
 
         # Les compétences spécialisées ne peuvent pas être inférieures à -11
+        # A la création aucune ne peut être supérieure à +3
         cs = person["Competence"]["Specialisee"][competence(i, 1)]
         if cs < -11:
             return "La valeur minimale pour la compétence\n" + competence(i, 2) + " est de -11"
+        if creation and cs > 3:
+            return "La valeur maximale pour la compétence\n" + competence(i, 2) + " est de 3 à la création"
 
         # Decalage de 11 pour avoir des indices partant de 0
         v = 11 + cs
@@ -460,9 +563,12 @@ def verifier (person):
     for i in range(35, 42):
 
         # Les compétences connaissances ne peuvent pas être inférieures à -11
+        # A la création aucune ne peut être supérieure à +3
         cc = person["Competence"]["Connaissances"][competence(i, 1)]
         if cc < -11:
             return "La valeur minimale pour la compétence\n" + competence(i, 2) + " est de -11"
+        if creation and cc > 3:
+            return "La valeur maximale pour la compétence\n" + competence(i, 2) + " est de 3 à la création"
 
         # Decalage de 11 pour avoir des indices partant de 0
         v = 11 + cc
@@ -484,66 +590,135 @@ def verifier (person):
             if scd >= 1:
                 x -= 20
 
-    # Competences draconic sauf Thanatos
-    for i in range(42, 45):
+    # Competences draconic
+    if draconic:
 
+        # Sauf Thanatos
+        for i in range(42, 45):
+
+            # Les compétences draconic ne peuvent pas être inférieures à -11
+            # A la création aucune ne peut être supérieure à +3
+            cd = person["Competence"]["Draconic"][competence(i, 1)]
+            if cd < -11:
+                return "La valeur minimale pour la compétence\n" + competence(i, 2) + " est de -11"
+            if creation and cd > 3:
+                return "La valeur maximale pour la compétence\n" + competence(i, 2) + " est de 3 à la création"
+
+            # Decalage de 11 pour avoir des indices partant de 0
+            v = 11 + cd
+            scd = -11
+
+            # On compte les points utilisés par tranches de niveaux
+            for j in range(v):
+                scd += 1
+                # de -11 à -8 : 5 points
+                if scd >= -11 and scd <= -8:
+                    xd -= 5
+                # de -7 à -4 : 10 points
+                if scd >= -7 and scd <= -4:
+                    xd -= 10
+                # de -3 à 0 : 15 points
+                if scd >= -3 and scd <= 0:
+                    xd -= 15
+                # de +1 à +20 : 20 points
+                if scd >= 1:
+                    xd -= 20
+
+        # Competences draconic Thanatos
         # Les compétences draconic ne peuvent pas être inférieures à -11
-        cd = person["Competence"]["Draconic"][competence(i, 1)]
-        if cd < -11:
-            return "La valeur minimale pour la compétence\n" + competence(i, 2) + " est de -11"
+        # A la création aucune ne peut être supérieure à +3
+        ct = person["Competence"]["Draconic"]["Thanatos"]
+        if ct < -11:
+            return "La valeur minimale pour la compétence\nThanatos est de -11"
+        if creation and ct > 3:
+            return "La valeur maximale pour la compétence\nThanatos\n est de 3 à la création"
 
         # Decalage de 11 pour avoir des indices partant de 0
-        v = 11 + cd
+        v = 11 + ct
         scd = -11
 
         # On compte les points utilisés par tranches de niveaux
         for j in range(v):
             scd += 1
-            # de -11 à -8 : 5 points
+            # de -11 à -8 : 10 points
             if scd >= -11 and scd <= -8:
-                x -= 5
-            # de -7 à -4 : 10 points
+                xd -= 10
+            # de -7 à -4 : 20 points
             if scd >= -7 and scd <= -4:
+                xd -= 20
+            # de -3 à 0 : 30 points
+            if scd >= -3 and scd <= 0:
+                xd -= 30
+            # de +1 à +20 : 40 points
+            if scd >= 1:
+                xd -= 40
+
+    # Compétences de combat :  mélée
+    for i in range(46, 59):
+
+        # Ces compétences de combat ne peuvent pas être inférieures à -6
+        # A la création aucune ne peut être supérieure à +3
+        ccm = person["Competence"]["CMelee"][competence(i, 1)]
+        if ccm < -6:
+            return "La valeur minimale pour la compétence\n" + competence(i, 2) + " est de -6"
+        if creation and ccm > 3:
+            return "La valeur maximale pour la compétence\n" + competence(i, 2) + " est de 3 à la création"
+
+        # Decalage de 6 pour avoir des indices partant de 0
+        v = 6 + ccm
+        cm = -6
+
+        for j in range(v):
+            cm += 1
+            # de -6 à -4 : 10 points
+            if (cm >= -6) and (cm <= -4):
                 x -= 10
             # de -3 à 0 : 15 points
-            if scd >= -3 and scd <= 0:
+            if (cm >= -3) and (cm <= 0):
                 x -= 15
             # de +1 à +20 : 20 points
-            if scd >= 1:
+            if cm >= 1:
                 x -= 20
 
-    # Competences draconic Thanatos
-    # Les compétences draconic ne peuvent pas être inférieures à -11
-    ct = person["Competence"]["Draconic"]["Thanatos"]
-    if ct < -11:
-        return "La valeur minimale pour la compétence Thanatos\n est de -11"
+    # Compétences de combat : Tir et Lancer
+    for i in range(59, 65):
 
-    # Decalage de 11 pour avoir des indices partant de 0
-    v = 11 + ct
-    scd = -11
+        # Ces compétences de combat ne peuvent pas être inférieures à -8
+        # A la création aucune ne peut être supérieure à +3
+        ctl = person["Competence"]["CMelee"][competence(i, 1)]
+        if ctl < -8:
+            return "La valeur minimale pour la compétence\n" + competence(i, 2) + " est de -8"
+        if creation and ctl > 3:
+            return "La valeur maximale pour la compétence\n" + competence(i, 2) + " est de 3 à la création"
 
-    # On compte les points utilisés par tranches de niveaux
-    for j in range(v):
-        scd += 1
-        # de -11 à -8 : 10 points
-        if scd >= -11 and scd <= -8:
-            x -= 10
-        # de -7 à -4 : 20 points
-        if scd >= -7 and scd <= -4:
-            x -= 20
-        # de -3 à 0 : 30 points
-        if scd >= -3 and scd <= 0:
-            x -= 30
-        # de +1 à +20 : 40 points
-        if scd >= 1:
-            x -= 40
+        # Decalage de 6 pour avoir des indices partant de 0
+        v = 8 + ctl
+        tl = -8
+        for l in range(v):
+            tl += 1
+            # de -11 à -8 : 5 points
+            if tl >= -11 and tl <= -8:
+                x -= 5
+            # de -7 à -4 : 10 points
+            if tl >= -7 and tl <= -4:
+                x -= 10
+            # de -3 à 0 : 15 points
+            if tl >= -3 and tl <= 0:
+                x -= 15
+            # de +1 à +20 : 20 points
+            if tl >= 1:
+                x -= 20
 
+    # On vérifie que tous les points ont été utilisés
     if x > 0:
         return "Il reste encore " + str(x) + " points"
-
     elif x < 0:
         return "Attention le seuil de point est dépassé de " + str(-x) + " points"
-
+    if draconic:
+        if xd > 0:
+            return "Il reste encore " + str(x) + " points Draconic"
+        elif xd < 0:
+            return "Attention le seuil de point Draconic est dépassé de " + str(-x) + " points"
     return None
 
 # La fonction calculer met à jour le personnage à partir des données saisie
