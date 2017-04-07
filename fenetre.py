@@ -106,9 +106,9 @@ class Fenetre:
             .grid(row=1, column=2, sticky='W', padx="5")
 
         # Heure de naissance (pour hauts-rêvants)
-        self.Entry_Heure = IntVar()
+        self.Entry_Heure = StringVar()
         Label(frame1, text='Heure de Naissance:').grid(row=1, column=3, sticky='E')
-        Entry(frame1, textvariable=self.Entry_Heure, justify='right', width=3) \
+        Entry(frame1, textvariable=self.Entry_Heure, justify='right', width=10) \
             .grid(row=1, column=4, sticky='W', padx="5")
 
         # Taille
@@ -178,7 +178,7 @@ class Fenetre:
         self.Entry_C = []
 
         # Colonne 0 de taille à Dextérité
-        for i in range(0,6):
+        for i in range(0, 6):
             self.Entry_C.append(IntVar())
             Label(frame20, text="           "+personnage.caracteristique(i, 1)+':')\
                 .grid(row=i, column=0, sticky='E')
@@ -235,21 +235,21 @@ class Fenetre:
                 .grid(row=1, column=2*i-5, sticky='W', padx="5")
 
         # frame 4 : Compétences
-        frame4 = LabelFrame(root, text=" Compétences ", borderwidth=2, relief='ridge', height=200, width=600)
+        frame4 = LabelFrame(root, text=" Compétences ", borderwidth=2, relief='ridge', height=200, width=800)
         frame4.grid(row=3, column=0, columnspan=2, sticky='NW', padx="10", pady="5")
-        frame40 = LabelFrame(frame4, text=' Générales ', borderwidth=2, relief='ridge', height=200, width=200)
+        frame40 = LabelFrame(frame4, text=' Générales ', borderwidth=2, relief='ridge', height=200, width=300)
         frame40.grid(row=0, column=0, rowspan=2, sticky='NW', padx="5", pady="5")
-        frame41 = LabelFrame(frame4, text=' Particulières ', borderwidth=2, relief='ridge', height=200, width=200)
+        frame41 = LabelFrame(frame4, text=' Particulières ', borderwidth=2, relief='ridge', height=200, width=300)
         frame41.grid(row=0, column=1, rowspan=2, sticky='NW', padx="5", pady="5")
-        frame42 = LabelFrame(frame4, text=' Spécialisées ', borderwidth=2, relief='ridge', height=200, width=200)
+        frame42 = LabelFrame(frame4, text=' Spécialisées ', borderwidth=2, relief='ridge', height=200, width=300)
         frame42.grid(row=0, column=2, rowspan=2, sticky='NW', padx="5", pady="5")
-        frame43 = LabelFrame(frame4, text=' Connaissances ', borderwidth=2, relief='ridge', height=200, width=200)
+        frame43 = LabelFrame(frame4, text=' Connaissances ', borderwidth=2, relief='ridge', height=200, width=300)
         frame43.grid(row=0, column=3, sticky='NW', padx="5", pady="5")
-        frame44 = LabelFrame(frame4, text=' Draconic ', borderwidth=2, relief='ridge', height=200, width=200)
+        frame44 = LabelFrame(frame4, text=' Draconic ', borderwidth=2, relief='ridge', height=200, width=300)
         frame44.grid(row=1, column=3, sticky='SW', padx="5", pady="5")
-        frame45 = LabelFrame(frame4, text=' Combat Mélée ', borderwidth=2, relief='ridge', height=200, width=200)
+        frame45 = LabelFrame(frame4, text=' Combat Mélée ', borderwidth=2, relief='ridge', height=200, width=300)
         frame45.grid(row=0, column=4, rowspan=2, sticky='NW', padx="5", pady="5")
-        frame46 = LabelFrame(frame4, text=' Combat Tir-Lancer ', borderwidth=2, relief='ridge', height=200, width=200)
+        frame46 = LabelFrame(frame4, text=' Combat Tir-Lancer ', borderwidth=2, relief='ridge', height=200, width=300)
         frame46.grid(row=0, column=5, rowspan=2, sticky='NW', padx="5", pady="5")
         self.Entry_A = []
 
@@ -263,61 +263,61 @@ class Fenetre:
             Label(frame40, text=' ').grid(row=i, column=0, sticky='E')
 
         # Colonne 1 : Particulières
-        for i in range(11, 25):
+        for i in range(11, 26):
             self.Entry_A.append(IntVar())
             Label(frame41, text="      "+personnage.competence(i, 2)+':').grid(row=i-11, column=0, sticky='E')
             Entry(frame41, textvariable=self.Entry_A[i], justify='right', width=3)\
                 .grid(row=i-11, column=1, sticky='W', padx="5")
-        Label(frame41, text=' ').grid(row=14, column=0, sticky='E')
+        Label(frame41, text=' ').grid(row=15, column=0, sticky='E')
 
         # Colonne 2 : Spécialisées
-        for i in range(25, 35):
+        for i in range(26, 36):
             self.Entry_A.append(IntVar())
             Label(frame42, text="       "+personnage.competence(i, 2)+':')\
                 .grid(row=i-25, column=0, sticky='E')
             Entry(frame42, textvariable=self.Entry_A[i], justify='right', width=3)\
                 .grid(row=i-25, column=1, sticky='W', padx="5")
         for i in range(10, 15):
-            Label(frame42, text=' ').grid(row=i, column=0, sticky='E')
+            Label(frame42, text=' ').grid(row=i+1, column=0, sticky='E')
 
         # Colonne 3: Connaissances
-        for i in range(35, 42):
+        for i in range(36, 43):
             self.Entry_A.append(IntVar())
             Label(frame43, text="         "+personnage.competence(i, 2)+':')\
                 .grid(row=i-35, column=0, sticky='E')
             Entry(frame43, textvariable=self.Entry_A[i], justify='right', width=3)\
                 .grid(row=i-35, column=1, sticky='W', padx="5")
-        Label(frame43, text=' ').grid(row=7, column=0, sticky='E')
+        Label(frame43, text=' ').grid(row=8, column=0, sticky='E')
 
         # Colonne 3 : Draconic
         self.Draconic = []
         for i in range(0, 4):
             self.Entry_A.append(IntVar())
-            Label(frame44, text="             "+personnage.competence(i+42, 2)+':')\
+            Label(frame44, text="             "+personnage.competence(i+43, 2)+':')\
                 .grid(row=i, column=0, sticky='E')
-            self.Draconic.append(Entry(frame44, textvariable=self.Entry_A[i+42], justify='right', width=3))
+            self.Draconic.append(Entry(frame44, textvariable=self.Entry_A[i+43], justify='right', width=3))
             self.Draconic[i].grid(row=i, column=1, sticky='W', padx="5")
         Label(frame44, text=' ').grid(row=4, column=0, sticky='E')
 
         # Colonne 4 : Combat Mélée
-        for i in range(46, 59):
+        for i in range(47, 60):
             self.Entry_A.append(IntVar())
             Label(frame45, text=personnage.competence(i, 2) + ':') \
                 .grid(row=i - 46, column=0, sticky='E')
             Entry(frame45, textvariable=self.Entry_A[i], justify='right', width=3) \
                 .grid(row=i - 46, column=1, sticky='W', padx="5")
         for i in range(13, 15):
-            Label(frame45, text=' ').grid(row=i, column=0, sticky='E')
+            Label(frame45, text=' ').grid(row=i+1, column=0, sticky='E')
 
         # Colonne 5 : Combat Tir
-        for i in range(59, 65):
+        for i in range(60, 66):
             self.Entry_A.append(IntVar())
             Label(frame46, text="         " + personnage.competence(i, 2) + ':') \
                 .grid(row=i - 59, column=0, sticky='E')
             Entry(frame46, textvariable=self.Entry_A[i], justify='right', width=3) \
                 .grid(row=i - 59, column=1, sticky='W', padx="5")
         for i in range(6, 15):
-            Label(frame46, text=' ').grid(row=i, column=0, sticky='E')
+            Label(frame46, text=' ').grid(row=i+1, column=0, sticky='E')
 
         # frame5 : table de résolution et lancer de dé
         frame5 = LabelFrame(root, text=" Résolution et Lancer de Dés ", borderwidth=2, relief='ridge', height=200, width=600)
@@ -335,20 +335,20 @@ class Fenetre:
         Label(frame5, text='Compétence:').grid(row=0, column=2, sticky='NE')
         self.liste2 = Listbox(frame5, height=13, width=16, relief='sunken')
         self.liste2.grid(row=0, column=3, sticky='NW', padx="10", pady="5")
-        for i in range(0, 46):
+        for i in range(0, 66):
             self.liste2.insert(i, personnage.competence(i, 2))
         self.liste2.bind('<<ListboxSelect>>', self.sel_liste2)
 
         # Zone de résulats
         Label(frame5, text=' ').grid(row=16, column=0, sticky='NE')
         self.Entry_R_C_Val = IntVar()
-        Entry(frame5, textvariable=self.Entry_R_C_Val, justify='right', width=3, state='disabled') \
+        Entry(frame5, textvariable=self.Entry_R_C_Val, justify='right', width=3,) \
             .grid(row=17, column=0, sticky='E', padx="10")
         self.Entry_R_C_Name = StringVar()
         Entry(frame5, textvariable=self.Entry_R_C_Name, justify='left', width=16, state='disabled') \
             .grid(row=17, column=1, sticky='W', padx="10")
         self.Entry_R_A_Val = IntVar()
-        Entry(frame5, textvariable=self.Entry_R_A_Val, justify='right', width=3, state='disabled') \
+        Entry(frame5, textvariable=self.Entry_R_A_Val, justify='right', width=3,) \
             .grid(row=17, column=2, sticky='E', padx="10")
         self.Entry_R_A_Name = StringVar()
         Entry(frame5, textvariable=self.Entry_R_A_Name, justify='left', width=16, state='disabled') \
@@ -494,7 +494,7 @@ class Fenetre:
             self.Entry_C[i].set(self.pod["Caracteristique"][personnage.caracteristique(i, 0)])
         for i in range(0, 7):
             self.Entry_P[i].set(self.pod["Point"][personnage.point(i, 0)])
-        for i in range(0, 65):
+        for i in range(0, 66):
             self.Entry_A[i].set(self.pod["Competence"][personnage.competence(i, 0)][personnage.competence(i, 1)])
         if self.Entry_HRevant.get() != 1:
             for i in range(0, 4):

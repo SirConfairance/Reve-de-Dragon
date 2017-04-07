@@ -63,7 +63,7 @@ class Jeu:
     def __init__(self):
 
         # Entête magique des fichiers jeux
-        self.magic = "MAGIC-ISN-V2.0"
+        self.magic = "MAGIC-ISN-V2.5"
 
         # par défaut les fichiers sont stockés dans le répertoire du jeu
         self.rep = os.getcwd()

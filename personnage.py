@@ -105,7 +105,8 @@ def creer():
                 "Foret": -8,
                 "Glaces": -8,
                 "Marais": -8,
-                "Montagnes": -8
+                "Montagnes": -8,
+                "Deguisement": -8
             },
             "Specialisee": {
                 "Acrobatie": -11,
@@ -281,126 +282,129 @@ def competence(num1,num2):
         (24, 0): "Particuliere",
         (24, 1): "Montagnes",
         (24, 2): " Montagnes",
-        (25, 0): "Specialisee",
-        (25, 1): "Acrobatie",
-        (25, 2): " Acrobatie",
+        (25, 0): "Particuliere",
+        (25, 1): "Deguisement",
+        (25, 2): " Deguisement",
         (26, 0): "Specialisee",
-        (26, 1): "Chirurgie",
-        (26, 2): " Chirurgie",
+        (26, 1): "Acrobatie",
+        (26, 2): " Acrobatie",
         (27, 0): "Specialisee",
-        (27, 1): "Jeu",
-        (27, 2): " Jeu",
+        (27, 1): "Chirurgie",
+        (27, 2): " Chirurgie",
         (28, 0): "Specialisee",
-        (28, 1): "Jonglerie",
-        (28, 2): " Jonglerie",
+        (28, 1): "Jeu",
+        (28, 2): " Jeu",
         (29, 0): "Specialisee",
-        (29, 1): "Maroquinerie",
-        (29, 2): " Maroquinerie",
+        (29, 1): "Jonglerie",
+        (29, 2): " Jonglerie",
         (30, 0): "Specialisee",
-        (30, 1): "Metallurgie",
-        (30, 2): " Métallurgie",
+        (30, 1): "Maroquinerie",
+        (30, 2): " Maroquinerie",
         (31, 0): "Specialisee",
-        (31, 1): "Natation",
-        (31, 2): " Natation",
+        (31, 1): "Metallurgie",
+        (31, 2): " Métallurgie",
         (32, 0): "Specialisee",
-        (32, 1): "Navigation",
-        (32, 2): " Navigation",
+        (32, 1): "Natation",
+        (32, 2): " Natation",
         (33, 0): "Specialisee",
-        (33, 1): "Orfevrerie",
-        (33, 2): " Orfèvrerie",
+        (33, 1): "Navigation",
+        (33, 2): " Navigation",
         (34, 0): "Specialisee",
-        (34, 1): "Serrurerie",
-        (34, 2): " Serrurerie",
-        (35, 0): "Connaissances",
-        (35, 1): "Alchimie",
-        (35, 2): " Alchimie",
+        (34, 1): "Orfevrerie",
+        (34, 2): " Orfèvrerie",
+        (35, 0): "Specialisee",
+        (35, 1): "Serrurerie",
+        (35, 2): " Serrurerie",
         (36, 0): "Connaissances",
-        (36, 1): "Astronomie",
-        (36, 2): " Astronomie",
+        (36, 1): "Alchimie",
+        (36, 2): " Alchimie",
         (37, 0): "Connaissances",
-        (37, 1): "Botanique",
-        (37, 2): " Botanique",
+        (37, 1): "Astronomie",
+        (37, 2): " Astronomie",
         (38, 0): "Connaissances",
-        (38, 1): "Ecriture",
-        (38, 2): " Ecriture",
+        (38, 1): "Botanique",
+        (38, 2): " Botanique",
         (39, 0): "Connaissances",
-        (39, 1): "Legendes",
-        (39, 2): " Légendes",
+        (39, 1): "Ecriture",
+        (39, 2): " Ecriture",
         (40, 0): "Connaissances",
-        (40, 1): "Medecine",
-        (40, 2): " Médecine",
+        (40, 1): "Legendes",
+        (40, 2): " Légendes",
         (41, 0): "Connaissances",
-        (41, 1): "Zoologie",
-        (41, 2): " Zoologie",
-        (42, 0): "Draconic",
-        (42, 1): "Oniros",
-        (42, 2): " Oniros",
+        (41, 1): "Medecine",
+        (41, 2): " Médecine",
+        (42, 0): "Connaissances",
+        (42, 1): "Zoologie",
+        (42, 2): " Zoologie",
         (43, 0): "Draconic",
-        (43, 1): "Hypnos",
-        (43, 2): " Hypnos",
+        (43, 1): "Oniros",
+        (43, 2): " Oniros",
         (44, 0): "Draconic",
-        (44, 1): "Narcos",
-        (44, 2): " Narcos",
+        (44, 1): "Hypnos",
+        (44, 2): " Hypnos",
         (45, 0): "Draconic",
-        (45, 1): "Thanatos",
-        (45, 2): " Thanatos",
-        (46, 0): "CMelee",
-        (46, 1): "Bouclier",
-        (46, 2): " Bouclier",
+        (45, 1): "Narcos",
+        (45, 2): " Narcos",
+        (46, 0): "Draconic",
+        (46, 1): "Thanatos",
+        (46, 2): " Thanatos",
         (47, 0): "CMelee",
-        (47, 1): "CorpsaCorps",
-        (47, 2): " Corps à Corps",
+        (47, 1): "Bouclier",
+        (47, 2): " Bouclier",
         (48, 0): "CMelee",
-        (48, 1): "Esquive",
-        (48, 2): " Esquive",
+        (48, 1): "CorpsaCorps",
+        (48, 2): " Corps à Corps",
         (49, 0): "CMelee",
-        (49, 1): "Dague",
-        (49, 2): " Dague",
+        (49, 1): "Esquive",
+        (49, 2): " Esquive",
         (50, 0): "CMelee",
-        (50, 1): "Epee1Main",
-        (50, 2): " Epee une main",
+        (50, 1): "Dague",
+        (50, 2): " Dague",
         (51, 0): "CMelee",
-        (51, 1): "Epee2Main",
-        (51, 2): " Epee deux mains",
+        (51, 1): "Epee1Main",
+        (51, 2): " Epee une main",
         (52, 0): "CMelee",
-        (52, 1): "Fleau",
-        (52, 2): " Fleau",
+        (52, 1): "Epee2Main",
+        (52, 2): " Epee deux mains",
         (53, 0): "CMelee",
-        (53, 1): "Hache1Main",
-        (53, 2): " Hache une main",
+        (53, 1): "Fleau",
+        (53, 2): " Fleau",
         (54, 0): "CMelee",
-        (54, 1): "Hache2Main",
-        (54, 2): " Hache deux mains",
+        (54, 1): "Hache1Main",
+        (54, 2): " Hache une main",
         (55, 0): "CMelee",
-        (55, 1): "Lance",
-        (55, 2): " Lance",
+        (55, 1): "Hache2Main",
+        (55, 2): " Hache deux mains",
         (56, 0): "CMelee",
-        (56, 1): "Masse1Main",
-        (56, 2): " Masse une main",
+        (56, 1): "Lance",
+        (56, 2): " Lance",
         (57, 0): "CMelee",
-        (57, 1): "Masse2Main",
-        (57, 2): " Masse deux mains",
+        (57, 1): "Masse1Main",
+        (57, 2): " Masse une main",
         (58, 0): "CMelee",
-        (58, 1): "ArmeHast",
-        (58, 2): " Arme Hast",
-        (59, 0): "Tir",
-        (59, 1): "Arbalete",
-        (59, 2): " Arbalète",
+        (58, 1): "Masse2Main",
+        (58, 2): " Masse deux mains",
+        (59, 0): "CMelee",
+        (59, 1): "ArmeHast",
+        (59, 2): " Arme Hast",
         (60, 0): "Tir",
-        (60, 1): "Arc",
-        (60, 2): " Arc",
+        (60, 1): "Arbalete",
+        (60, 2): " Arbalete",
         (61, 0): "Tir",
-        (61, 1): "Fronde",
-        (61, 2): " Fronde",
+        (61, 1): "Arc",
+        (61, 2): " Arc",
         (62, 0): "Tir",
-        (62, 1): "DagueJet",
-        (62, 2): " Dague de Jet",
+        (62, 1): "Fronde",
+        (62, 2): " Fronde",
         (63, 0): "Tir",
-        (63, 1): "Javelot",
-        (63, 2): " Javelot",
+        (63, 1): "DagueJet",
+        (63, 2): " Dague de Jet",
         (64, 0): "Tir",
-        (64, 1): "Fouet",
-        (64, 2): " Fouet"
+        (64, 1): "Javelot",
+        (64, 2): " Javelot",
+        (65, 0): "Tir",
+        (65, 1): "Fouet",
+        (65, 2): " Fouet"
     }
     return case.get((num1, num2))
 
@@ -473,7 +477,7 @@ def verifier (person):
 
     # Vérification du nombre de points de compétences à distribuer
     # (selon le livre de règles page 22)
-    x = 3000 - xd
+    x = 3120 - xd
 
     # Competences générales
     for i in range(0, 11):
@@ -492,16 +496,16 @@ def verifier (person):
 
         # On compte les points utilisés par tranches de niveaux
         for j in range(v):
-            g += 1
             # de -3 à 0 : 15 points
             if g <= 0:
                 x -= 15
             # de +1 à +20 : 20 points
             if g >= 1:
                 x -= 20
+            g += 1
 
     # Competences particulières
-    for i in range(11, 25):
+    for i in range(11, 26):
 
         # Les compétences particulières ne peuvent pas être inférieures à -8
         # A la création aucune ne peut être supérieure à +3
@@ -529,7 +533,7 @@ def verifier (person):
                 x -= 20
 
     # Competences spécialisées
-    for i in range(25, 35):
+    for i in range(26, 36):
 
         # Les compétences spécialisées ne peuvent pas être inférieures à -11
         # A la création aucune ne peut être supérieure à +3
@@ -560,7 +564,7 @@ def verifier (person):
                 x -= 20
 
     # Competences connaissances
-    for i in range(35, 42):
+    for i in range(36, 43):
 
         # Les compétences connaissances ne peuvent pas être inférieures à -11
         # A la création aucune ne peut être supérieure à +3
@@ -594,7 +598,7 @@ def verifier (person):
     if draconic:
 
         # Sauf Thanatos
-        for i in range(42, 45):
+        for i in range(43, 46):
 
             # Les compétences draconic ne peuvent pas être inférieures à -11
             # A la création aucune ne peut être supérieure à +3
@@ -654,7 +658,7 @@ def verifier (person):
                 xd -= 40
 
     # Compétences de combat :  mélée
-    for i in range(46, 59):
+    for i in range(47, 60):
 
         # Ces compétences de combat ne peuvent pas être inférieures à -6
         # A la création aucune ne peut être supérieure à +3
@@ -681,11 +685,11 @@ def verifier (person):
                 x -= 20
 
     # Compétences de combat : Tir et Lancer
-    for i in range(59, 65):
+    for i in range(60, 66):
 
         # Ces compétences de combat ne peuvent pas être inférieures à -8
         # A la création aucune ne peut être supérieure à +3
-        ctl = person["Competence"]["CMelee"][competence(i, 1)]
+        ctl = person["Competence"]["Tir"][competence(i, 1)]
         if ctl < -8:
             return "La valeur minimale pour la compétence\n" + competence(i, 2) + " est de -8"
         if creation and ctl > 3:
@@ -710,15 +714,10 @@ def verifier (person):
                 x -= 20
 
     # On vérifie que tous les points ont été utilisés
-    if x > 0:
-        return "Il reste encore " + str(x) + " points"
-    elif x < 0:
-        return "Attention le seuil de point est dépassé de " + str(-x) + " points"
-    if draconic:
-        if xd > 0:
-            return "Il reste encore " + str(x) + " points Draconic"
-        elif xd < 0:
-            return "Attention le seuil de point Draconic est dépassé de " + str(-x) + " points"
+    if x+xd > 0:
+        return "Il reste encore " + str(x+xd) + " points"
+    elif x+xd < 0:
+        return "Attention le seuil de point est dépassé de " + str(-(x+xd)) + " points"
     return None
 
 # La fonction calculer met à jour le personnage à partir des données saisie
