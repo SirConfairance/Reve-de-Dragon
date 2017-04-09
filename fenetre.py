@@ -26,7 +26,6 @@
 #  from fenetre import Fenetre
 #  wnd = Fenetre(job)
 #
-#
 
 from tkinter import Tk, StringVar, IntVar, Label, Entry, BooleanVar, Checkbutton, Listbox, Menu, Frame, LabelFrame, Canvas, \
     PhotoImage, Button, Text, Scrollbar, Toplevel
@@ -90,13 +89,13 @@ class Fenetre:
 
         # frame1 : Fiche du personnage
         frame1 = Frame(root, borderwidth=0, relief='flat', height=200, width=600)
-        frame1.grid(row=0, column=0, sticky='NW', padx="15", pady="5")
+        frame1.grid(row=0, column=0, sticky='NW', padx="10", pady="5")
 
         # Nom
         self.Entry_Nom = StringVar()
         self.Old_Nom = ""
         Label(frame1, text='Nom:').grid(row=0, column=0, columnspan=2, sticky='E')
-        Entry(frame1, textvariable=self.Entry_Nom, justify='left', width=32)\
+        Entry(frame1, textvariable=self.Entry_Nom, justify='left', width=34)\
             .grid(row=0, column=2, columnspan=4, sticky='W', padx="5")
 
         # Age
@@ -161,7 +160,7 @@ class Fenetre:
         # Signes Particuliers
         self.Entry_SignesP = StringVar()
         Label(frame1, text='Signes Particuliers:').grid(row=3, column=5, sticky='E')
-        Entry(frame1, textvariable=self.Entry_SignesP, justify='left', width=40)\
+        Entry(frame1, textvariable=self.Entry_SignesP, justify='left', width=37)\
             .grid(row=3, column=6, columnspan=3, sticky='W', padx="5")
 
         # Frame 2 : Caractéristiques
@@ -268,7 +267,6 @@ class Fenetre:
             Label(frame41, text="      "+personnage.competence(i, 2)+':').grid(row=i-11, column=0, sticky='E')
             Entry(frame41, textvariable=self.Entry_A[i], justify='right', width=3)\
                 .grid(row=i-11, column=1, sticky='W', padx="5")
-        Label(frame41, text=' ').grid(row=15, column=0, sticky='E')
 
         # Colonne 2 : Spécialisées
         for i in range(26, 36):
@@ -324,58 +322,57 @@ class Fenetre:
         frame5.grid(row=0, column=1, rowspan=3, columnspan=2, sticky='NW', padx="10", pady="5")
 
         # Listbox caractéristiques
-        Label(frame5, text='Caractéristique:').grid(row=0, column=0, sticky='NE')
-        self.liste1 = Listbox(frame5, height=13, width=16, relief='sunken')
-        self.liste1.grid(row=0, column=1, sticky='NW', padx="10", pady="5")
+        Label(frame5, text='Caractéristique:').grid(row=0, column=0, columnspan=2, padx="10", sticky='NW')
+        self.liste1 = Listbox(frame5, height=13, width=18, relief='sunken')
+        self.liste1.grid(row=1, column=1, sticky='NW', pady="5")
         for i in range(0, 18):
             self.liste1.insert(i, personnage.caracteristique(i, 1))
         self.liste1.bind('<<ListboxSelect>>',self.sel_liste1)
 
         # Listbox compétences
-        Label(frame5, text='Compétence:').grid(row=0, column=2, sticky='NE')
-        self.liste2 = Listbox(frame5, height=13, width=16, relief='sunken')
-        self.liste2.grid(row=0, column=3, sticky='NW', padx="10", pady="5")
+        Label(frame5, text='Compétence:').grid(row=0, column=2, columnspan=2, padx="10", sticky='NW')
+        self.liste2 = Listbox(frame5, height=13, width=18, relief='sunken')
+        self.liste2.grid(row=1, column=3, sticky='NW', pady="5")
         for i in range(0, 66):
             self.liste2.insert(i, personnage.competence(i, 2))
         self.liste2.bind('<<ListboxSelect>>', self.sel_liste2)
 
         # Zone de résulats
-        Label(frame5, text=' ').grid(row=16, column=0, sticky='NE')
         self.Entry_R_C_Val = IntVar()
         Entry(frame5, textvariable=self.Entry_R_C_Val, justify='right', width=3,) \
-            .grid(row=17, column=0, sticky='E', padx="10")
+            .grid(row=16, column=0, sticky='E', padx="10")
         self.Entry_R_C_Name = StringVar()
         Entry(frame5, textvariable=self.Entry_R_C_Name, justify='left', width=16, state='disabled') \
-            .grid(row=17, column=1, sticky='W', padx="10")
+            .grid(row=16, column=1, sticky='W', padx="10")
         self.Entry_R_A_Val = IntVar()
         Entry(frame5, textvariable=self.Entry_R_A_Val, justify='right', width=3,) \
-            .grid(row=17, column=2, sticky='E', padx="10")
+            .grid(row=16, column=2, sticky='E', padx="10")
         self.Entry_R_A_Name = StringVar()
         Entry(frame5, textvariable=self.Entry_R_A_Name, justify='left', width=16, state='disabled') \
-            .grid(row=17, column=3, sticky='W', padx="10")
-        Label(frame5, text='   Seuil de Réussite:').grid(row=18, column=0, sticky='NE')
+            .grid(row=16, column=3, sticky='W', padx="10")
+        Label(frame5, text='   Seuil de Réussite:').grid(row=17, column=0, sticky='NE')
         self.Entry_R_Seuil = IntVar()
         Entry(frame5, textvariable=self.Entry_R_Seuil, justify='right', width=3, state='disabled')\
-            .grid(row=18, column=1, sticky='W', padx="10")
-        Label(frame5, text='Tirage:').grid(row=18, column=2, sticky='NE')
+            .grid(row=17, column=1, sticky='W', padx="10")
+        Label(frame5, text='Tirage:').grid(row=17, column=2, sticky='NE')
         self.Entry_R_Tirage = IntVar()
         Entry(frame5, textvariable=self.Entry_R_Tirage, justify='right', width=3, state='disabled') \
-            .grid(row=18, column=3, sticky='W', padx="10")
-        Label(frame5, text='Résultat Spécial:').grid(row=19, column=0, sticky='NE')
+            .grid(row=17, column=3, sticky='W', padx="10")
+        Label(frame5, text='Résultat Spécial:').grid(row=18, column=0, sticky='NE')
         self.Entry_R_Special = StringVar()
         Entry(frame5, textvariable=self.Entry_R_Special, justify='left', width=30, state='disabled') \
-            .grid(row=19, column=1, columnspan=2, sticky='W', padx="10")
-        Label(frame5, text=' ').grid(row=20, column=0, sticky='NE')
+            .grid(row=18, column=1, columnspan=2, sticky='W', padx="10")
+        Label(frame5, text=' ').grid(row=19, column=0, sticky='NE')
 
         # Bouton pour le lancer de Dés
         Button(frame5, text="Lancer les Dés", command=self.lancer) \
-            .grid(row=19, column=3, columnspan=3, sticky='W', padx="10")
+            .grid(row=18, column=3, columnspan=3, sticky='W', padx="10")
 
         # La mascote
         # On la fait déborder sur le frame4 pour gagner en largeur totale
         self.dragon = PhotoImage(file='./dragon3.gif')
         logo = Canvas(root, width=200, height=181, bd=1, relief='ridge')
-        logo.grid(row=3, column=1, columnspan=2, sticky='SE', padx="10", pady="4")
+        logo.grid(row=3, column=1, columnspan=2, sticky='SE', padx="10", pady="3")
         logo.create_image(0, 0, image=self.dragon, anchor='nw')
 
         # L'ecran étant initialisé, on peut créér un premier personnage par défaut
