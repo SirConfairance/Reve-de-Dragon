@@ -322,7 +322,7 @@ class Fenetre:
         frame5.grid(row=0, column=1, rowspan=3, columnspan=2, sticky='NW', padx="10", pady="5")
 
         # Listbox caractéristiques
-        Label(frame5, text='Caractéristique:').grid(row=0, column=0, columnspan=2, padx="10", sticky='NW')
+        Label(frame5, text='         Caractéristique:').grid(row=0, column=0, columnspan=2, padx="10", sticky='NW')
         self.liste1 = Listbox(frame5, height=13, width=18, relief='sunken')
         self.liste1.grid(row=1, column=1, sticky='NW', pady="5")
         for i in range(0, 18):
@@ -342,14 +342,14 @@ class Fenetre:
         Entry(frame5, textvariable=self.Entry_R_C_Val, justify='right', width=3,) \
             .grid(row=16, column=0, sticky='E', padx="10")
         self.Entry_R_C_Name = StringVar()
-        Entry(frame5, textvariable=self.Entry_R_C_Name, justify='left', width=16, state='disabled') \
-            .grid(row=16, column=1, sticky='W', padx="10")
+        Entry(frame5, textvariable=self.Entry_R_C_Name, justify='left', width=18, state='disabled') \
+            .grid(row=16, column=1, sticky='W')
         self.Entry_R_A_Val = IntVar()
         Entry(frame5, textvariable=self.Entry_R_A_Val, justify='right', width=3,) \
             .grid(row=16, column=2, sticky='E', padx="10")
         self.Entry_R_A_Name = StringVar()
-        Entry(frame5, textvariable=self.Entry_R_A_Name, justify='left', width=16, state='disabled') \
-            .grid(row=16, column=3, sticky='W', padx="10")
+        Entry(frame5, textvariable=self.Entry_R_A_Name, justify='left', width=18, state='disabled') \
+            .grid(row=16, column=3, sticky='W')
         Label(frame5, text='   Seuil de Réussite:').grid(row=17, column=0, sticky='NE')
         self.Entry_R_Seuil = IntVar()
         Entry(frame5, textvariable=self.Entry_R_Seuil, justify='right', width=3, state='disabled')\
@@ -362,7 +362,7 @@ class Fenetre:
         self.Entry_R_Special = StringVar()
         Entry(frame5, textvariable=self.Entry_R_Special, justify='left', width=30, state='disabled') \
             .grid(row=18, column=1, columnspan=2, sticky='W', padx="10")
-        Label(frame5, text=' ').grid(row=19, column=0, sticky='NE')
+        Label(frame5, text=' ').grid(row=19, column=4, sticky='NE')
 
         # Bouton pour le lancer de Dés
         Button(frame5, text="Lancer les Dés", command=self.lancer) \
