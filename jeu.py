@@ -220,7 +220,8 @@ class Jeu:
     # On doit modifier les compétences de tous les personnages sans toucher aux caractéristiques
     # Renvoie le personnage courant
     def partie(self):
-
+        # Nécessite de crééer la feuille d'archétype.
+        # Fait appel à la feuille d'archétype pour archiver les compétences du personnage
         return self.data[self.current]
 
     # demande de validation et enregistrement des données du personnage
