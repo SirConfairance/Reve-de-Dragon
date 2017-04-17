@@ -105,9 +105,9 @@ class Fenetre:
             .grid(row=1, column=2, sticky='W', padx="5")
 
         # Heure de naissance (pour hauts-rêvants)
-        self.Entry_Heure = StringVar()
+        self.Entry_Heure = IntVar()
         Label(frame1, text='Heure de Naissance:').grid(row=1, column=3, sticky='E')
-        Entry(frame1, textvariable=self.Entry_Heure, justify='right', width=10) \
+        Entry(frame1, textvariable=self.Entry_Heure, justify='right', width=3) \
             .grid(row=1, column=4, sticky='W', padx="5")
 
         # Taille
@@ -379,7 +379,7 @@ class Fenetre:
         self.creer()
         return
 
-    # Callback de recopie de la sélection depuis la Listbox des caractéristiques
+    # Fonction de recopie de la sélection depuis la Listbox des caractéristiques
     # Met à jour les 2 champs points et nom de caractéristique pour le calcul de résolution
     def sel_liste1(self, event):
 
@@ -389,7 +389,7 @@ class Fenetre:
             self.Entry_R_C_Val.set(self.Entry_C[index].get())
         return
 
-    # Callback de recopie de la sélection depuis la Listbox des compétences
+    # Fonction de recopie de la sélection depuis la Listbox des compétences
     # Met à jour les 2 champs points et nom de compétence pour le calcul de résolution
     def sel_liste2(self, event):
 
@@ -399,7 +399,7 @@ class Fenetre:
             self.Entry_R_A_Val.set(self.Entry_A[index].get())
         return
 
-    # Callback de changement d'etat haut-rêvant
+    # Fonction de changement d'etat haut-rêvant
     def sel_revant(self):
 
         if self.Entry_HRevant.get() != 1:
@@ -427,21 +427,21 @@ class Fenetre:
         if self.fermer():
             names = self.jeu.ouvrir()
             if names != None:
-                index = -1
+                numero = -1
                 for person in names:
 
                     # index 0 : nom du fichier jeu
-                    if index < 0:
+                    if numero < 0:
                         self.root.title('Rêve de Dragon - ' + person)
 
                     # autres index : personnages
                     # index vaudra le nombre de personnages reçus
                     else:
-                        self.viewmenu.add_command(label=person, command=lambda index=index: self.selectionner(index))
-                    index += 1
+                        self.viewmenu.add_command(label=person, command=lambda index=numero: self.selectionner(index))
+                    numero += 1
 
                 # On affiche le premier personnage
-                if index > 0:
+                if numero > 0:
                     self.selectionner(0)
 
         return
@@ -478,6 +478,7 @@ class Fenetre:
 
         self.Entry_Nom.set(self.pod["Fiche"]["Nom"])
         self.Entry_Age.set(self.pod["Fiche"]["Age"])
+        self.Entry_Heure.set(self.pod["Fiche"]["Heure_Naissance"])
         self.Entry_Taille.set(self.pod["Fiche"]["Taille"])
         self.Entry_Poids.set(self.pod["Fiche"]["Poids"])
         self.Entry_Sexe.set(self.pod["Fiche"]["Sexe"])
@@ -520,6 +521,7 @@ class Fenetre:
 
         self.pod["Fiche"]["Nom"] = self.Entry_Nom.get()
         self.pod["Fiche"]["Age"] = self.Entry_Age.get()
+        self.pod["Fiche"]["Heure_Naissance"] = self.Entry_Heure.get()
         self.pod["Fiche"]["Taille"] = self.Entry_Taille.get()
         self.pod["Fiche"]["Poids"] = self.Entry_Poids.get()
         self.pod["Fiche"]["Sexe"] = self.Entry_Sexe.get()
@@ -574,9 +576,9 @@ class Fenetre:
         return
 
     # Lancer de dé
-    # !!! trouver un moyen de verrouiller la fonction si pas ok pour lancer
-    # !!!
     # Calcul de résolution puis lancer des dés
+    # On passe au jeu les valeurs de caractéristiques et compétences sélectionnées
+    # Le résultat sera récupéré en retour et affiché
     def lancer(self):
 
         resultat = self.jeu.lancer(self.Entry_R_C_Val.get(),self.Entry_R_A_Val.get())
