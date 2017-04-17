@@ -1,4 +1,4 @@
-﻿# Rêve de Dragon
+# Rêve de Dragon
 # ISN Terminale S Lycée Murat Issoire 2016-2017
 # Par Jikael Larriven, Marguerite Sobkowicz, Cédric Mongiat
 #
@@ -36,7 +36,7 @@ def creer():
         "Version": 0,
         "Fiche": {
             "Nom": "",
-            "Heure_Naissance": "",
+            "Heure_Naissance": 0,
             "Sexe": "M",
             "Age": 0,
             "Taille": 0,
@@ -445,15 +445,37 @@ def verifier (person):
         creation = False
 
     # Taille  de 6 à 15
-    # Beauté 1 à 16, les points au dessus de 10 sont retranchés des caractéristiques
-    # Poids de 31 à 110, à vérifier selon la taille
-    # Heure de naissance de 1 à 12
+    ht = person["Fiche"]["Taille"]
+    if ht < 6 or ht > 15:
+        return "La Taille doit être entre 6 et 15"
 
+    # Poids de 31 à 110, à vérifier selon la taille
+    pds = person["Fiche"]["Poids"]
+    if pds < 31 or pds > 110:
+        return "Le Poids doit être entre 31 et 110"
+
+    # Age minimum de 10
+    hn = person["Fiche"]["Age"]
+    if hn < 10:
+        return "L'Age minimum est de 10"
+
+    # Heure de naissance de 1 à 12
+    hn = person["Fiche"]["Heure_Naissance"]
+    if hn < 1 or hn > 12:
+        return "L'Heure de Naissance doit être entre 1 et 12"
+
+    # Beauté 0 à 16, les points au dessus de 10 sont retranchés des caractéristiques
+    bte = person["Fiche"]["Beaute"]
+    if bte < 1 or bte > 16:
+        return "La Beaute doit être entre 1 et 16"
+    if bte > 10:
+        cpt = bte - 10
+    else:
+        cpt = 0
 
     # Vérification des valeurs limites de caractéristiques à la création du personnage
     # On utilise Version qui vaut 0 à la création et s'incrémente à chaque recalcul des points
     # On ne compte l'affectation des 160 points que lors de la première saisie
-    cpt = 0
     for i in range(0, 14):
         ca = person["Caracteristique"][caracteristique(i, 0)]
         if ca < 0:
