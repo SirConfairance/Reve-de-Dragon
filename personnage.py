@@ -43,7 +43,7 @@ def creer():
             "Poids": 0,
             "Cheveux": "",
             "Yeux": "",
-            "Beaute": 0,
+            "Beaute": 10,
             "Signes_Particulier": "",
             "Ambidextre": 0,
             "Haut_Revant": 0
@@ -519,12 +519,13 @@ def verifier (person):
         # On compte les points utilisés par tranches de niveaux
         for j in range(v):
             # de -3 à 0 : 15 points
-            if g <= 0:
+            g += 1
+            if g <=0 :
                 x -= 15
             # de +1 à +20 : 20 points
             if g >= 1:
                 x -= 20
-            g += 1
+
 
     # Competences particulières
     for i in range(11, 26):
@@ -749,6 +750,7 @@ def recalculer (person):
 
     TabConst = [0, 0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6]
     TabTaille = [0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5]
+    Tabdmg = [-1, -1, -1, -1, -1, -1, 0, 0, 0, 0, 1, 1, 2, 2]
 
     # calcul des caractéristiques (selon le livre de règles page 11)
     person["Caracteristique"]["Melee"] = (person["Caracteristique"]["Force"] + person["Caracteristique"]["Agilite"]) // 2
@@ -757,11 +759,12 @@ def recalculer (person):
     person["Caracteristique"]["Derobee"] = (person["Caracteristique"]["Agilite"] + 21 - person["Caracteristique"]["Taille"]) // 2
 
     # calcul des points (formules du livre page 22)
+
     person["Point"]["Vie"] = (person["Caracteristique"]["Taille"] + person["Caracteristique"]["Constitution"]) / 2
     person["Point"]["Endurance"] = person["Caracteristique"]["Taille"] + person["Caracteristique"]["Constitution"]
     person["Point"]["Seuil_Constitution"] = TabConst[person["Caracteristique"]["Constitution"]]
     person["Point"]["Sustain"] = TabTaille[person["Caracteristique"]["Taille"]]
-    person["Point"]["PlusDmg"] = floor((person["Caracteristique"]["Taille"] + person["Caracteristique"]["Force"]) / 2)
+    person["Point"]["PlusDmg"] = Tabdmg [(person["Caracteristique"]["Taille"] + person["Caracteristique"]["Force"] )// 2]
     person["Point"]["Encombrement"] = (person["Caracteristique"]["Taille"] + person["Caracteristique"]["Force"]) / 2
 
     # Incrément de la version du personnage
