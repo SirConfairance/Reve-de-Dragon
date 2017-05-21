@@ -1,0 +1,164 @@
+Vous allez jouer un voyageur, qui est parti de chez lui pour effectuer son "voyage".
+Ce terme est une réelle étape de la vie dans le monde de rêve de dragons.
+Chaque personnes peuplant les différents rêves effectue ce voyage.
+La plupart se contentant de sillonner la région les ayant vu naître et de rentrer chez eux.
+Mais vous possédez l'étincelle des grands voyageurs, ceux qui passent de rêves en rêves
+pour la connaissance, la richesse, la découverte, l'aventure... 
+
+La quantité d'informations concernant un personnage est telle que
+celles-ci ne sauraient tenir sur une seule page. On utilise donc jusqu'à cinq feuilles
+Il y a en tout :
+• La feuille de personnage proprement dite où est décrit le personnage,
+• La feuille de route qui sert à tenir à jour tout ce qui varie en cours de partie,
+• La feuille d'équipement où est décrit en détail ce que possède le personnage,
+• La feuille d'archétype qui est la somme de toutes les vies antérieures du personnage,
+• La feuille de sorts qui est réservée aux magiciens,
+
+Sur la feuille de personnage, la création se déroule en quatre étapes : détermination
+des caractéristiques, détermination des compétences, calcul des points et
+seuils, choix des signes particuliers.
+
+			------------------------------
+
+Les Caracteristiques : 
+
+Les caractéristiques représentent les dispositions innées du personnage,
+et, pouvant augmenter avec l'expérience, sont également une partie
+de son acquis. On peut naître avec une bonne constitution, ou au contraire une
+mauvaise vue, à l'individu d'en tirer le meilleur parti, de développer ce qui est
+faible, de maintenir ce qui est fort.
+Pour simuler ces différences entre les individus, les caractéristiques sont ex-primées
+par des valeurs, des notes allant de zéro à 20. Seuls les créatures et les
+monstres peuvent avoir des caractéristiques au-delà de 20. Inversement, quand
+une caractéristique vaut zéro, c'est qu'elle n'existe pas, ou n'existe plus. Par
+exemple, un aveugle a zéro en VUE. La moyenne statistique est 10,5, qui,
+pour simplifier, est arrondie à 10. Un individu entièrement moyen a 10 dans
+toutes ses caractéristiques. Les caractéristiques som au nombre de
+18. Les 14 premières sont déterminées en répartissant entre elles un certain nombre
+de points. Les 4 dernières sont obtenues en fàisant la moyenne de certaines autres.
+
+Déterminer les 14 premières caractéristiques, de TAILLE à CHANCE, en répartissant
+librement entre elles 160 points, soit 11,4 de moyenne. Aucune caractéristique
+ne peut être inférieure à 6 ni supérieure à 15.
+
+Limitation.
+La FORCE peut au maximum être égale à TAILLE +4.
+Un personnagede 6 en TAILLE peur au maximum avoir une FORCE de 10.
+Pour bénéficier de la FORCE maximale, 15, il faut un minimum de 11 en TAILLE.
+
+			------------------------------
+
+Les Compétences :
+
+Les compétences complètent les caractéristiques et représentent
+l'acquis du personnage. Ce sont les domaines, les matières, où le personnage
+a acquis de l'expérience. Les compétences sont représentées par des
+niveaux relatifs, c'est-à-dire pouvant être positifs, zéro, ou négatifs.
+De même que 10 est une caractéristique statistiquement moyenne, 0 est un niveau
+statistiquement moyen. Un personnage ayant 10 dans une caractéristique et 0
+dans la compétence conjointe, possède 50% de chances de réussir une actîon de
+difficulté statistiquement moyenne. Les compétences n'ont pas de limite
+théorique dans le positif, encore que rares soient les niveaux supérieurs à + 11.
+Il existe en revanche une limite dans le négatif, appelée niveau de base. Le
+niveau de base varie selon la famille de compétences.
+
+Chaque compétence demande qu'on lui alloue un certain nombre de points pour
+monter au niveau supérieur. Chacun, haut-rêvant ou non, dispose de 3000
+points d'expérience préliminaire à répartir dans les compétences de son choix.
+Seuls les haut-rêvants peuvent mettre des points en Draconic et doivent penser à
+en réserver pour les sorts.
+
+Quel que soit le niveau de base d'une compétence, il faut le même nombre de
+points pour passer d'un niveau donné au niveau supérieur.
+Pour passer de 0 en Chant (compétence générale, base -4) à + 1, il faut 20 points.
+Pour passer de 0 en Chirurgie (compétence spécialisée, base -11) à + l, il faut
+également 20 points. Mais pour acquérir Chirurgie à + 1 depuis la base de -11, il
+faut beaucoup plus de points que pour acquérir Chant à + 1 depuis la base de -4.
+Par ailleurs, les niveaux les plus bas (les plus négatifs) coûtent moins de points
+que les niveaux plus hauts.
+
+Les haut-rêvants
+Sur leur 3000 points d'expérience préliminaire, les haut-rêvants peuvent
+également développer les 4 voies du Draconic : Oniros, Hypnos, Narcos et
+Thanatos. Comme pour les aunes compétences, aucune ne peut dépasser +3 au
+départ. Par ailleurs, la voie de Thanatos a ceci de spécifique que chaque niveau
+dont elle est augmentée détruit un nombre équivalent de points d'expérience dans
+une autre voie. Cela revient à dire qu'elle coûte le double de points. Monter Thanatos
+à +3 coute au départ 350 poims.
+
+			------------------------------
+
+Points, Seuils & Signes particuliers :
+
+Les points, sans cesse dépensés puis regagnés, servent à indiquer l'état
+actuel du personnage, sa santé, sa puissance onirique.
+Les seuils sont des limites, au-delà ou en deçà desquelles des modifications peuvent
+intervenir dans son comportement. Points et seuils dérivent directement des
+caractéristiques.
+Les signes particuliers achèvent de dessiner le personnage et lui confèrent la
+touche de finition. Pour la plupart, ils sont librement choisis par le joueur.
+
+Les principaux points :
+• Les points de rêve, qui baissent à chaque usage de la magie.
+• Les points de vie, qui baissent à chaque diminution du potentiel vital de
+l'individu (blessure, maladie) et indiquent sa mort lorsqu'un certain seuil
+négatif est dépassé.
+• Les points d'endurance, qui baissent à chaque traumatisme ou effort violent,
+entraînant parallèlement une augmentation des points de fatigue.
+
+Les principaux seuils:
+• Le seuil d'encombrement (en abrégé enc), qui indique la charge maximale
+qu'un individu peut porter, au-delà de laquelle il souffre de malus à ses actions.
+• Le seuil de sustentation (en abrégé sust), qui indique la quantité de nourriture
+dont il a besoin pour survivre sans malus.
+• Le seuil de constitution (en abrépé SC), qui indique principalement la limite
+négative de points de vie qu il ne peut dépasser.
+• Le seuil de rêve (en abrégé SR), qui est la limite de récupération des
+points de rêve.
+• Le bonus aux dommages (en abrégé +dom) personnel, qui modifie, selon
+sa carrure, les dommages qu'il peut occasionner en combat.
+
+Les principaux signes particuliers :
+• L'heure de naissance du personnage, importante pour les haut-rêvants.
+• Son âge, il est préférable d'être jeune.
+• Ses mensurations, en relation avec sa caractéristique TAILLE, sa hauteur en cm, son poids.
+• Sa description, couleur des yeux, des cheveux, etc.
+• Sa beauté, à ne pas confondre avec sa caractéristique APPARENCE.
+
+			------------------------------
+
+Résolution des Actions :
+
+La plupart des actions des personages ne nécessitent aucun jet de dés,
+elles sont dites automatiques : marcher, parler, manger, dormir. ..
+Pour d'autres, au contraire, le succès ne saurait être assuré à 100%. C'est par
+exemple escalader, se cacher, combattre, lancer un sort. Pour ces dernières, il faut
+déterminer à chaque fois un pourcentage de succès. Selon les cas et les difficultés
+relatives, ce pourcentage peut être élevé, par exemple 95% de chances d'escalader
+tel mur, ou au contraire dramatiquement bas : 5% de chances d'esquiver tel coup d'épée.
+Une fois le pourcentage déterminé, le joueur joue un jet de pourcentage.
+Si le résultat est égal ou inférieur aux chances de réussite, il réussit; si le
+résultat est supérieur, il échoue.
+
+Qualité des Actions
+Dans nombre de cas, savoir qu'on a réussi ou échoué est insuffisant.
+On aimerait savoir si c'est très réussi ou très échoué ; on aimerait,
+par exemple, connaître la qualité du morceau de musique que l'on vient de
+jouer. Deux règles complémentaires permettent d'aboutir à cela: les résultats
+spéciaux et les points de qualité.
+
+Certaines réussites et échecs spéciaux sont à considérer par rapport aux
+chances de succès. Ce sont :
+• Réussite particulière = 20% des chances de succès.
+• Réussite significative = 50% des chances de succès.
+• Echec particulier = 20% des chances d'échec.
+• Echec total = 10% des chances d'échec.
+
+Toute réussite en deçà de la significative est appelée réussite normale.
+Tout échec en deçà de l'échec particulier est appelé échec normal.
+
+Succès supérieur à 100
+Quand les chances de succès sont supérieures à 100, il n'y a plus d'échec
+particulier ni total. Toutefois, un résultat de 00 (cent) au jet de dés indique toujours
+un échec normal, quel que soit le pourcentage de chances.
+
