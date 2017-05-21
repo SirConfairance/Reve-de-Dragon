@@ -1,86 +1,84 @@
-1. Création d'un nouveau Jeu.
+1. CrÃ©ation d'un nouveau Jeu.
    -------------------------
 
   Depuis le menu choisissez "Fichier", puis "Nouveau".
-  Vous devez alors créer les personnages de ce jeu.
+  Vous devez alors crÃ©er les personnages de ce jeu.
 
   
-2. Création d'un Personnage.
+2. CrÃ©ation d'un Personnage.
    ------------------------
 
   Depuis le menu choisissez "Commande" puis "Nouveau Personnage"
   
-  Donnez un nom à votre personnage dans le champ "Nom"
-  Continuez avec le physique de votre personnage jusqu'à "Signes Particuliers".
-    "Heure de Naissance" de 1 à 12.
-    "Beauté" de 1 à 16. Vous avez 10 points gratuits, au delà ce sont des points de caractéristiques en moins.
-  Vous devez choisir par la case à cocher "Haut-Rêvant" s'il sera un magicien ou non.
+  Donnez un nom Ã  votre personnage dans le champ "Nom"
+  Continuez avec le physique de votre personnage jusqu'Ã  "Signes Particuliers".
+    "Heure de Naissance" de 1 Ã  12.
+    "BeautÃ©" de 1 Ã  16. Vous avez 10 points gratuits, au delÃ  ce sont des points de caractÃ©ristiques en moins.
+  Vous devez choisir par la case Ã  cocher "Haut-RÃªvant" s'il sera un magicien ou non.
 
-  Saisie des caractéristiques
-    Les caractéristiques sont au nombre de 18 et représentent les dispositions innées du personnage.
-    Vous devez répartir 160 points entre les 14 premières. Les 4 dernières seront calculées.
-    Les notes vont de zéro à 20. On conseille d'attibuer des valeurs de 6 à 15.
-    Zéro signifie l'abscence de la capacité (0 en Vue = aveugle)
-    Un individu entièrement moyen a 10 dans toutes ses caractéristiques.
+  Saisie des caractÃ©ristiques
+    Les caractÃ©ristiques sont au nombre de 18 et reprÃ©sentent les dispositions innÃ©es du personnage.
+    Vous devez rÃ©partir 160 points entre les 14 premiÃ¨res. Les 4 derniÃ¨res seront calculÃ©es.
+    Les notes vont de zÃ©ro Ã  20. On conseille d'attibuer des valeurs de 6 Ã  15.
+    ZÃ©ro signifie l'abscence de la capacitÃ© (0 en Vue = aveugle)
+    Un individu entiÃ¨rement moyen a 10 dans toutes ses caractÃ©ristiques.
 	
   Points et seuils
-    Les points et seuils sont directement calculés à partir des caractéristiques et reportés sur la feuille.
+    Les points et seuils sont directement calculÃ©s Ã  partir des caractÃ©ristiques et reportÃ©s sur la feuille.
 
-  Saisie des Compétences
-    Les compétences complètent les caractéristiques et représentent l'acquis du personnage.
-    Elles sont représentées par des niveaux relatifs, c'est-à-dire pouvant être positifs, zéro, ou négatifs.
-    Au départ le personnage reçoit 3000 points d'expérience préliminaire.
-    Les valeurs minimales sont imposées par la classe de compétence. Il n'y a pas de valeur maximale.
-    De même que 10 est une caractéristique statistiquement moyenne, 0 est un niveau statistiquement moyen.
-    Vous avez accès aux compétences "Draconic" si votre personnage est Haut-Rêvant. Vous devez y placer 300 points.
+  Saisie des CompÃ©tences
+    Les compÃ©tences complÃ¨tent les caractÃ©ristiques et reprÃ©sentent l'acquis du personnage.
+    Elles sont reprÃ©sentÃ©es par des niveaux relatifs, c'est-Ã -dire pouvant Ãªtre positifs, zÃ©ro, ou nÃ©gatifs.
+    Au dÃ©part le personnage reÃ§oit 3000 points d'expÃ©rience prÃ©liminaire.
+    Les valeurs minimales sont imposÃ©es par la classe de compÃ©tence. Il n'y a pas de valeur maximale.
+    De mÃªme que 10 est une caractÃ©ristique statistiquement moyenne, 0 est un niveau statistiquement moyen.
+    Vous avez accÃ¨s aux compÃ©tences "Draconic" si votre personnage est Haut-RÃªvant. Vous devez y placer 300 points.
 
 	
 3. Validation du Personnage.
    ------------------------
 
-  Une fois toutes les données entrées vous devez valider votre personnage.
+  Une fois toutes les donnÃ©es entrÃ©es vous devez valider votre personnage.
   Depuis le menu choisissez "Commande" puis "Valider le Personnage"
-  Des contrôles sont effectués sur les données et les caractéristiques dérivées recalculées.
-  Si tout est correct le personnage est ajouté à la liste dans le menu "Personnages"
+  Des contrÃ´les sont effectuÃ©s sur les donnÃ©es et les caractÃ©ristiques dÃ©rivÃ©es recalculÃ©es.
+  Si tout est correct le personnage est ajoutÃ© Ã  la liste dans le menu "Personnages"
   Sinon un message vous indique le type d'erreur que contient votre feuille.
 
   
 4. Enregistrement du Jeu.
    ---------------------
 
-  Vous pouvez créer autant de personnages que vous le souhaitez.
-  Une fois les personnages créés et à intervales réguliers il est plus prudent de sauvegarder l'état de votre Jeu.
-  La première fois, depuis le menu choisissez "Fichier", puis "Enregistrer sous".
-  Choississez un répertoire et un nom de fichier.
-  Les fois suivantes vous pouvez sauvegarder le Jeu au même emplacement par "Enregistrer".
+  Vous pouvez crÃ©er autant de personnages que vous le souhaitez.
+  Une fois les personnages crÃ©Ã©s et Ã  intervales rÃ©guliers il est plus prudent de sauvegarder l'Ã©tat de votre Jeu.
+  La premiÃ¨re fois, depuis le menu choisissez "Fichier", puis "Enregistrer sous".
+  Choississez un rÃ©pertoire et un nom de fichier.
+  Les fois suivantes vous pouvez sauvegarder le Jeu au mÃªme emplacement par "Enregistrer".
  
 
-5. Sélection des Personnages.
+5. SÃ©lection des Personnages.
    -------------------------
 
-  Pour sélectionner la feuille de personnage active choisissez "Personnage" dans le menu.
-  Dans la liste des personnages sélectionner celui souhaité.
-  Sa feuille s'affiche. Vous pouvez modifier ses données ou procéder à la résolution d'une Action.
+  Pour sÃ©lectionner la feuille de personnage active choisissez "Personnage" dans le menu.
+  Dans la liste des personnages sÃ©lectionner celui souhaitÃ©.
+  Sa feuille s'affiche. Vous pouvez modifier ses donnÃ©es ou procÃ©der Ã  la rÃ©solution d'une Action.
 
   
 6. Changement de partie.
    --------------------
    
-  Par défaut à la création du jeu on entre dans une nouvelle partie.
-  En fin de partie, on conserve les identités et caractéristiques des personnages
-  ...
+  Par dÃ©faut Ã  la crÃ©ation du jeu on entre dans une nouvelle partie.
+  En fin de partie, on conserve les identitÃ©s et caractÃ©ristiques des personnages
+  Ce point sera complÃ¨tÃ© dans une future version avec la crÃ©ation de la feuille d'archetype.
   
 
-7. Résolution d'une Action.
+7. RÃ©solution d'une Action.
    -----------------------
   
-  La plupart des actions des personages ne nécessitent aucun jet de dés, elles sont dites automatiques.
-  Pour d'autres, au contraire, le succès ne saurait être assuré à 100%. il faut déterminer un pourcentage de succès.
-  Vous allez choisir dans le cadre "Résolution et Lancer de Dés" une caractéristique et une compétence.
-  ...
-  
-
-  
-  
-  
+  La plupart des actions des personages ne nÃ©cessitent aucun jet de dÃ©s, elles sont dites automatiques.
+  Pour d'autres, au contraire, le succÃ¨s ne saurait Ãªtre assurÃ© Ã  100%. il faut dÃ©terminer un pourcentage de succÃ¨s.
+  Vous allez choisir dans le cadre "RÃ©solution et Lancer de DÃ©s" une caractÃ©ristique et une compÃ©tence.
+  Les valeurs en points doivent s'afficher dans les cadres sous les listes.
+  Appuyez sur le bouton de lancer des dÃ©s.
+  Le rÃ©sultat et le jugement de votre action s'affichent alors.
+ 
   
